@@ -2,68 +2,86 @@
 # by Luke Stanley
 # for storing the standard periodic table!
 
-require "./element.rb"
+require "./element"  # Don't need to have file extension
 
 table = [
-holder = Element.new.make(1,"Index","from dead orphans","zero",0,1), 
-h  = Element.new.make(  1, "H",  "Hydrogen",	"hydr", 		1.01,	 	1),
-he = Element.new.make(  2, "He", "Helium",		"hel", 			4.00,		0),
-li = Element.new.make(  3, "Li", "Lithium",		"lith", 		6.94,		1),
-be = Element.new.make(  4, "Be", "Beryllium",	"beryll", 		9.01,		2),
-b  = Element.new.make(  5, "B",  "Boron",		"bor", 			10.81,		0),
-c  = Element.new.make(  6, "C",  "Carbon",		"carbon", 		12.01,		0),
-n  = Element.new.make(  7, "N",  "Nitrogen",	"nitr", 		14.01,		-3),
-o  = Element.new.make(  8, "O",  "Oxygen", 		"ox", 			16.00,		-2),
-fl = Element.new.make(  9, "Fl", "Florine",		"flor", 		19.00,		-1),
-ne = Element.new.make( 10, "Ne", "Neon", 		"neon", 		20.18,		0),
-na = Element.new.make( 11, "Na", "Sodium", 		"sod", 			22.99,		1),
-mg = Element.new.make( 12, "Mg", "Magnesium",	"magnes", 		24.31,		2),
-al = Element.new.make( 13, "Al", "Aluminium",	"alumin",		26.98,		3),
-si = Element.new.make( 14, "Si", "Silicon",		"silic", 		28.09,		0),
-p  = Element.new.make( 15, "P",  "Phosphorus",	"phosphor", 	30.97,		-3),
-s  = Element.new.make( 16, "S",  "Sulfur",		"sulfur", 		32.07,		-2),
-cl = Element.new.make( 17, "Cl", "Chlorine",	"chlor", 		35.45,		-1),
-ar = Element.new.make( 18, "Ar", "Argon",		"argon", 		39.95,		0),
-k  = Element.new.make( 19, "K",  "Potassium",	"potass", 		39.10,		1),
-ca = Element.new.make( 20, "Ca", "Calcium",		"calc", 		40.08,		2),
-sc = Element.new.make( 21, "Sc", "Scandium",	"scand", 		44.96,		0),
-ti = Element.new.make( 22, "Ti", "Titanium",	"titan", 		47.87,		0),
-v  = Element.new.make( 23, "V",  "Vanadium",	"vanad", 		50.94,		0),
-cr = Element.new.make( 24, "Cr", "Chromium",	"chrom", 		52.00,		0),
-mn = Element.new.make( 25, "Mn", "Manganese", 	"mangan", 		54.94,		0),
-fe = Element.new.make( 26, "Fe", "Iron", 		"ferr", 		55.85,		0),
-co = Element.new.make( 27, "Co", "Cobalt", 		"cobalt", 		58.93,		0),
-ni = Element.new.make( 28, "Ni", "Nickel", 		"nick", 		58.69,		0),
-cu = Element.new.make( 29, "Cu", "Copper", 		"copp", 		63.55,		0),
-zn = Element.new.make( 30, "Zn", "Zinc", 		"zinc", 		65.39,		0),
-ga = Element.new.make( 31, "Ga", "Gallium",		"gall", 		69.72,		0),
-ge = Element.new.make( 32, "Ge", "Germanium",	"german", 		72.61,		0),
-as = Element.new.make( 33, "As", "Arsenic",		"arsen", 		74.92,		-3),
-se = Element.new.make( 34, "Se", "Selenium",	"selen", 		78.96,		-2),
-br = Element.new.make( 35, "Br", "Bromine", 	"brom", 		79.90,		-1),
-kr = Element.new.make( 36, "Kr", "Krypton",		"krypton", 		83.80,		0),
-rb = Element.new.make( 37, "Rb", "Rubidium",	"rubid", 		85.47,		1),
-sr = Element.new.make( 38, "Sr", "Strontium",	"stront", 		87.62,		2),
-y  = Element.new.make( 39, "Y",  "Yttrium", 	"yttr", 		88.91,		0),
-zr = Element.new.make( 40, "Zr", "Zirconium",	"zircon", 		91.22,		0),
-nb = Element.new.make( 41, "Nb", "Niobium",		"niob", 		92.91,		0),
-mo = Element.new.make( 42, "Mo", "Molybdenum",	"molybden", 	95.94,		0),
-tc = Element.new.make( 43, "Tc", "Technium",	"techn", 		98.00,		0),
-ru = Element.new.make( 44, "Ru", "Ruthenium",	"ruthen", 		101.07,		0),
-rh = Element.new.make( 45, "Rh", "Rhodium",		"rhod", 		102.91,		0),
-pd = Element.new.make( 46, "Pd", "Palladium", 	"pallad", 		106.42,		0),
-ag = Element.new.make( 47, "Ag", "Silver",	 	"silv", 		107.87,		0),
-cd = Element.new.make( 48, "Cd", "Cadmium", 	"cadm", 		112.41,		0),
-ind= Element.new.make( 49, "In", "Indium",	 	"ind", 			114.82,		0),
-sn = Element.new.make( 50, "Sn", "Tin",		 	"tin", 			118.71,		0),
-sb = Element.new.make( 51, "Sb", "Antimony", 	"antimon", 		121.76,		0),
-te = Element.new.make( 52, "Te", "Tellurium", 	"tellur", 		127.60,		-2),
-i  = Element.new.make( 53, "I",  "Iodine",	 	"iod", 			126.90,		-1),
-xe = Element.new.make( 54, "Xe", "Xenon",	 	"xen", 			131.29,		0),
-cs = Element.new.make( 55, "Cs", "Cesium",	 	"ces", 			132.91,		1),
-ba = Element.new.make( 56, "Ba", "Barium",	 	"bar", 			137.33,		2),
-la = Element.new.make( 57, "La", "Lanthanum",	"lanthan", 		138.91,		0),
+holder = nil,  # See comment below
 
+# I've never built an array like this. It screams "Java", rather than Ruby to me (but I may just be a Ruby elitist?)
+# I put comments below on build an array. I would do something like this with arrays and an 
+# iterative block using ranges, which is essentially your program in about 1/10 the code:
+#
+# symbols = [nil, 'H', 'He', 'Li',...]
+# names = [nil, 'Hydrogen', 'Helium', 'Lithium',...]
+# abbreviations = [nil, 'hydr', 'hel', 'lith',...]
+# weights = [nil, 1.01, 4.00, 6.94,...]
+# charges = [nil, 1, 0, 1,...]
+# table = Array.new
+# (1..109).each { |n| table[n] = Element.new(n, symbols[n], names[n], abbreviations[n], weights[n], charges[n]) }
+# puts table[1].name
+#
+# Or if you did a hash, with element names, say, as the key, replace the lines above with:
+# table = Hash.new
+# (1..109).each { |n| table[names[n]] = Element.new(n, symbols[n], names[n], abbreviations[n], weights[n], charges[n]) }
+# puts table['Hydrogen'].atomicMass
+
+h  = Element.new(  1, "H",  "Hydrogen",	"hydr", 		1.01,	 	1),   # See comments above and below in the comments
+he = Element.new(  2, "He", "Helium",		"hel", 			4.00,		0),     # for various other changes
+li = Element.new(  3, "Li", "Lithium",		"lith", 		6.94,		1),
+be = Element.new(  4, "Be", "Beryllium",	"beryll", 		9.01,		2),
+b  = Element.new(  5, "B",  "Boron",		"bor", 			10.81,		0),
+c  = Element.new(  6, "C",  "Carbon",		"carbon", 		12.01,		0),
+n  = Element.new(  7, "N",  "Nitrogen",	"nitr", 		14.01,		-3),
+o  = Element.new(  8, "O",  "Oxygen", 		"ox", 			16.00,		-2),
+fl = Element.new(  9, "Fl", "Florine",		"flor", 		19.00,		-1),
+ne = Element.new( 10, "Ne", "Neon", 		"neon", 		20.18,		0),
+na = Element.new( 11, "Na", "Sodium", 		"sod", 			22.99,		1),
+mg = Element.new( 12, "Mg", "Magnesium",	"magnes", 		24.31,		2),
+al = Element.new( 13, "Al", "Aluminium",	"alumin",		26.98,		3),
+si = Element.new( 14, "Si", "Silicon",		"silic", 		28.09,		0),
+p  = Element.new( 15, "P",  "Phosphorus",	"phosphor", 	30.97,		-3),
+s  = Element.new( 16, "S",  "Sulfur",		"sulfur", 		32.07,		-2),
+cl = Element.new( 17, "Cl", "Chlorine",	"chlor", 		35.45,		-1),
+ar = Element.new( 18, "Ar", "Argon",		"argon", 		39.95,		0),
+k  = Element.new( 19, "K",  "Potassium",	"potass", 		39.10,		1),
+ca = Element.new( 20, "Ca", "Calcium",		"calc", 		40.08,		2),
+sc = Element.new( 21, "Sc", "Scandium",	"scand", 		44.96,		0),
+ti = Element.new( 22, "Ti", "Titanium",	"titan", 		47.87,		0),
+v  = Element.new( 23, "V",  "Vanadium",	"vanad", 		50.94,		0),
+cr = Element.new( 24, "Cr", "Chromium",	"chrom", 		52.00,		0),
+mn = Element.new( 25, "Mn", "Manganese", 	"mangan", 		54.94,		0),
+fe = Element.new( 26, "Fe", "Iron", 		"ferr", 		55.85,		0),
+co = Element.new( 27, "Co", "Cobalt", 		"cobalt", 		58.93,		0),
+ni = Element.new( 28, "Ni", "Nickel", 		"nick", 		58.69,		0),
+cu = Element.new( 29, "Cu", "Copper", 		"copp", 		63.55,		0),
+zn = Element.new( 30, "Zn", "Zinc", 		"zinc", 		65.39,		0),
+ga = Element.new( 31, "Ga", "Gallium",		"gall", 		69.72,		0),
+ge = Element.new( 32, "Ge", "Germanium",	"german", 		72.61,		0),
+as = Element.new( 33, "As", "Arsenic",		"arsen", 		74.92,		-3),
+se = Element.new( 34, "Se", "Selenium",	"selen", 		78.96,		-2),
+br = Element.new( 35, "Br", "Bromine", 	"brom", 		79.90,		-1),
+kr = Element.new( 36, "Kr", "Krypton",		"krypton", 		83.80,		0),
+rb = Element.new( 37, "Rb", "Rubidium",	"rubid", 		85.47,		1),
+sr = Element.new( 38, "Sr", "Strontium",	"stront", 		87.62,		2),
+y  = Element.new( 39, "Y",  "Yttrium", 	"yttr", 		88.91,		0),
+zr = Element.new( 40, "Zr", "Zirconium",	"zircon", 		91.22,		0),
+nb = Element.new( 41, "Nb", "Niobium",		"niob", 		92.91,		0),
+mo = Element.new( 42, "Mo", "Molybdenum",	"molybden", 	95.94,		0),
+tc = Element.new( 43, "Tc", "Technium",	"techn", 		98.00,		0),
+ru = Element.new( 44, "Ru", "Ruthenium",	"ruthen", 		101.07,		0),
+rh = Element.new( 45, "Rh", "Rhodium",		"rhod", 		102.91,		0),
+pd = Element.new( 46, "Pd", "Palladium", 	"pallad", 		106.42,		0),
+ag = Element.new( 47, "Ag", "Silver",	 	"silv", 		107.87,		0),
+cd = Element.new( 48, "Cd", "Cadmium", 	"cadm", 		11102.41,		0),
+ind= Element.new( 49, "In", "Indium",	 	"ind", 			114.82,		0),
+sn = Element.new( 50, "Sn", "Tin",		 	"tin", 			118.71,		0),
+sb = Element.new( 51, "Sb", "Antimony", 	"antimon", 		121.76,		0),
+te = Element.new( 52, "Te", "Tellurium", 	"tellur", 		127.60,		-2),
+i  = Element.new( 53, "I",  "Iodine",	 	"iod", 			126.90,		-1),
+xe = Element.new( 54, "Xe", "Xenon",	 	"xen", 			131.29,		0),
+cs = Element.new( 55, "Cs", "Cesium",	 	"ces", 			132.91,		1),
+ba = Element.new( 56, "Ba", "Barium",	 	"bar", 			137.33,		2),
+la = Element.new.make( 57, "La", "Lanthanum",	"lanthan", 		138.91,		0),    # I stopped here
 ce = Element.new.make( 58, "Ce", "Cerium",		"cer", 			140.12,		0),
 pr = Element.new.make( 59, "Pr", "Praseodymium","praseodym", 	140.91,		0),
 nd = Element.new.make( 60, "Nd", "Neodymium",	"neodym", 		144.24,		0),
